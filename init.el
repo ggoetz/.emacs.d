@@ -31,6 +31,12 @@
 ;;; Custom repositories, paths
 ;; -------------------------------------------------------------------------- ;;
 
+;; Path to where setting files are kept
+(add-to-list 'load-path "~/.emacs.d/settings")
+
+;; Require some custom functions
+(require 'custom-functions)
+
 ;; A couple more repositories
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -42,8 +48,10 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-;; Path to where setting files are kept
-(add-to-list 'load-path "~/.emacs.d/settings")
+;; Making sure PATH variable is correct if this is OSX
+(setenv "PATH" 
+        (if (system-is-mac) 
+            "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin"))
 
 ;;; Utilities
 ;; -------------------------------------------------------------------------- ;;
