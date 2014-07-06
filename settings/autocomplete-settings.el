@@ -1,6 +1,6 @@
 ;;; autocomplete-settings --- autocompletion
 
-;;; Commentary:
+;;; Commentary: autocomplete settings
 
 ;;; Code:
 
