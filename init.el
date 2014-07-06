@@ -10,6 +10,7 @@
 ;;   - configures org-mode
 
 ;;; Code:
+;; -------------------------------------------------------------------------- ;;
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -26,6 +27,8 @@
 (setq column-number-mode t)
 
 ;;; Custom repositories
+;; -------------------------------------------------------------------------- ;;
+
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -37,6 +40,7 @@
   (exec-path-from-shell-initialize))
 
 ;;; Haskell mode --- configure emacs for haskell development
+;; -------------------------------------------------------------------------- ;;
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
@@ -51,13 +55,17 @@
 
 ;; End Haskell-specific instructions
 
-;;; Flycheck
+;;; Flycheck --- on-the-fly verification
+;; -------------------------------------------------------------------------- ;;
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;;; Org-mode
+;;; Org-mode --- organise and plan tasks
+;; -------------------------------------------------------------------------- ;;
+
 (require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
+(define-key mode-specific-map "\C-cl" 'org-store-link)
+(define-key mode-specific-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
 ;; Set up org-mode agenda
@@ -65,5 +73,8 @@
                              "~/org/home.org"
                              ))
 
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
+;; -------------------------------------------------------------------------- ;;
 (provide 'init.el)
 ;;; init.el ends here
