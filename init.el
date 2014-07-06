@@ -51,6 +51,9 @@
 ;; Flycheck
 (require 'flycheck-settings)
 
+;; Auto-complete
+(require 'autocomplete-settings)
+
 ;;; Modes
 ;; -------------------------------------------------------------------------- ;;
 
