@@ -12,6 +12,8 @@
 ;;; Code:
 ;; -------------------------------------------------------------------------- ;;
 
+;; Basic settings first
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -26,9 +28,10 @@
 ;; Line-column mode by default
 (setq column-number-mode t)
 
-;;; Custom repositories
+;;; Custom repositories, paths
 ;; -------------------------------------------------------------------------- ;;
 
+;; A couple more repositories
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -39,42 +42,32 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-;;; Haskell mode --- configure emacs for haskell development
+;; Path to where setting files are kept
+(add-to-list 'load-path "~/.emacs.d/settings")
+
+;;; Utilities
 ;; -------------------------------------------------------------------------- ;;
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; Flycheck
+(require 'flycheck-settings)
 
-;; hslint on the command line only likes this indentation mode;
-;; alternatives commented out below.
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-
-;; Ignore compiled Haskell files in filename completions
-(add-to-list 'completion-ignored-extensions ".hi")
-
-;; End Haskell-specific instructions
-
-;;; Flycheck --- on-the-fly verification
+;;; Modes
 ;; -------------------------------------------------------------------------- ;;
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; Ido mode
+(require 'ido)
+(ido-mode t)
 
-;;; Org-mode --- organise and plan tasks
-;; -------------------------------------------------------------------------- ;;
+;; Haskell
+(require 'haskell-settings)
 
-(require 'org)
-(define-key mode-specific-map "\C-cl" 'org-store-link)
-(define-key mode-specific-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
+;; Python
+(require 'python-settings)
 
-;; Set up org-mode agenda
-(setq org-agenda-files (list "~/org/lab.org"
-                             "~/org/home.org"
-                             ))
-
-(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+;; Org-mode
+(require 'org-settings)
 
 ;; -------------------------------------------------------------------------- ;;
+
 (provide 'init.el)
 ;;; init.el ends here
