@@ -22,6 +22,9 @@
 ;; Never use tabs
 (setq-default indent-tabs-mode nil)
 
+;; Line-column mode by default
+(setq column-number-mode t)
+
 ;;; Custom repositories
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -52,7 +55,15 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;; Org-mode
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
 
+;; Set up org-mode agenda
+(setq org-agenda-files (list "~/org/lab.org"
+                             "~/org/home.org"
+                             ))
 
 (provide 'init.el)
 ;;; init.el ends here
