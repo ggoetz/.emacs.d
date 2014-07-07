@@ -86,7 +86,7 @@
 (require 'haskell-settings)
 
 ;; Python
-;(require 'python-settings)
+(require 'python-settings)
 
 ;; Org-mode
 (require 'org-settings)
