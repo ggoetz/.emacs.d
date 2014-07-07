@@ -1,11 +1,8 @@
-==================
 #Emacs config file 
-==================
 
 This is my emacs configuration file.
 
 ##General requirements
-======================
 
 This emacs configuration requires el-get. 
 To install, evaluate the following command from the scratch buffer (``C-j``): 
@@ -23,7 +20,6 @@ Other modules installed include:
 * ``markdown-mode``
 
 ##Python settings
-=================
 
 I use elpy:
 https://github.com/jorgenschaefer/elpy
