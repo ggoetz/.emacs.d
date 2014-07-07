@@ -17,5 +17,8 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+;; Activate column indicator
+(add-hook 'org-mode-hook 'fci-mode)
+
 (provide 'org-settings)
 ;;; org-settings ends here

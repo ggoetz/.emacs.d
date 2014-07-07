@@ -14,5 +14,8 @@
              )
        auto-mode-alist))
 
+; Enable column indicator
+(add-hook 'markdown-mode-hook 'fci-mode)
+
 (provide 'markdown-settings)
 ;;; markdown-settings ends here
