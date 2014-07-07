@@ -79,8 +79,8 @@
 ;; -------------------------------------------------------------------------- ;;
 
 ;; Ido mode
-;(require 'ido)
-;(ido-mode t)
+(require 'ido)
+(ido-mode t)
 
 ;; Haskell
 (require 'haskell-settings)
@@ -92,7 +92,7 @@
 (require 'org-settings)
 
 ;; Markdown-mode
-;(require 'markdown-settings)
+(require 'markdown-settings)
 
 ;; -------------------------------------------------------------------------- ;;
 
