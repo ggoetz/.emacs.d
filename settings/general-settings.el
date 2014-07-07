@@ -15,14 +15,13 @@
 
 ; Do not show the startup screen
 (setq inhibit-startup-screen t)
-; Do not show the menu bar
-(menu-bar-mode 0)
 ; Do not show the tool bar
 (require 'tool-bar)
 (tool-bar-mode 0)
 ; Do not show the scroll bar
 (if window-system (scroll-bar-mode 0))
-; Column marker mode
+; Column marker mode. 
+; Add hook to major mode when you want to turn it on (see python-settings.el)
 (require 'fill-column-indicator)
 (setq fci-rule-column 80)
 
