@@ -22,6 +22,9 @@
 (tool-bar-mode 0)
 ; Do not show the scroll bar
 (if window-system (scroll-bar-mode 0))
+; Column marker mode
+(require 'fill-column-indicator)
+(setq fci-rule-column 80)
 
 ; Turn on mouse wheel support for scrolling
 (require 'mwheel)

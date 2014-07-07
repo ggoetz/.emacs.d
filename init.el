@@ -26,6 +26,7 @@
 
 ;; Path to where setting files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
+(add-to-list 'load-path "~/.emacs.d/modules")
 
 ;; Require some custom functions
 (require 'custom-functions)
