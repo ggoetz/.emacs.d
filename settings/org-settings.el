@@ -20,5 +20,8 @@
 ;; Activate column indicator
 (add-hook 'org-mode-hook 'fci-mode)
 
+;; Spellcheck: use flycheck
+(add-hook 'org-mode-hook 'turn-on-flyspell 'append)
+
 (provide 'org-settings)
 ;;; org-settings ends here

@@ -1,8 +1,8 @@
-#Emacs config file 
+# Emacs config file 
 
 This is my emacs configuration file.
 
-##General requirements
+## General requirements
 
 This emacs configuration requires el-get. 
 To install, evaluate the following command from the scratch buffer (``C-j``): 
@@ -19,7 +19,17 @@ Other modules installed include:
 * ``fill-column-indicator``
 * ``markdown-mode``
 
-##Python settings
+## Python settings
 
 I use elpy:
 https://github.com/jorgenschaefer/elpy
+
+## Org-mode settings
+
+Flycheck requires ``aspell`` to be installed in order to provide spellcheck
+capabilities.
+
+## Markdown-mode settings
+
+Flycheck requires ``aspell`` to be installed in order to provide spellcheck
+capabilities.

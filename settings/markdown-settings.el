@@ -17,5 +17,8 @@
 ; Enable column indicator
 (add-hook 'markdown-mode-hook 'fci-mode)
 
+;; Spellcheck: use flycheck
+(add-hook 'markdown-mode-hook 'turn-on-flyspell 'append)
+
 (provide 'markdown-settings)
 ;;; markdown-settings ends here
