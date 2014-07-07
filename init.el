@@ -21,6 +21,10 @@
   ;; If there is more than one, they won't work right.
  )
 
+; Theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'zenburn t)
+
 ;;; General settings
 ;; -------------------------------------------------------------------------- ;;
 
