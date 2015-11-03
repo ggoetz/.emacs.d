@@ -11,8 +11,14 @@
 (setq org-log-done t)
 
 ;; Set up org-mode agenda
-(setq org-agenda-files (list "~/org/lab.org"
-                             "~/org/home.org"
+(setq org-agenda-files (list "~/Dropbox/Org/lab/administratif.org"
+			     "~/Dropbox/Org/lab/imaging.org"
+			     "~/Dropbox/Org/lab/misc-general.org"
+			     "~/Dropbox/Org/lab/misc-signalproc.org"
+			     "~/Dropbox/Org/lab/monkey-coding.org"
+			     "~/Dropbox/Org/lab/prosthesis.org"
+			     "~/Dropbox/Org/lab/publication.org"
+			     "~/Dropbox/Org/lab/rt-spikesorting.org"
                              ))
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
@@ -22,6 +28,10 @@
 
 ;; Spellcheck: use flycheck
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
+
+;; Add latex to path
+(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
+(setq exec-path (append exec-path '("/usr/texbin")))
 
 (provide 'org-settings)
 ;;; org-settings ends here
