@@ -23,6 +23,8 @@ Other modules installed include:
 
 I use elpy:
 https://github.com/jorgenschaefer/elpy
+The use of virtualenv.el is also recommended in order to properly integrate
+with python virtual environments.
 
 ## Org-mode settings
 
