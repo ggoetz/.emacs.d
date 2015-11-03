@@ -15,11 +15,11 @@
 ;; Basic settings first
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(virtualenv-root "~/Research/Vision/Stanford/vision9/env/"))
 
 ; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -71,6 +71,13 @@
       (eval-print-last-sexp))))
 (el-get 'sync)
 
+;; Disable Command+Q on OSX
+(if (system-is-mac)
+    (defvar osx-key-mode-map (make-keymap) "osx-key-mode-map keymap.")
+    (define-key osx-key-mode-map (kbd "A-q") nil)
+    (osx-key-mode-map 1)
+)
+
 ;;; Utilities
 ;; -------------------------------------------------------------------------- ;;
 
@@ -99,7 +106,16 @@
 ;; Markdown-mode
 (require 'markdown-settings)
 
+;; Latex-mode
+(require 'latex-settings)
+
 ;; -------------------------------------------------------------------------- ;;
 
 (provide 'init.el)
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
