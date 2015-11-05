@@ -73,9 +73,7 @@
 
 ;; Disable Command+Q on OSX
 (if (system-is-mac)
-    (defvar osx-key-mode-map (make-keymap) "osx-key-mode-map keymap.")
-    (define-key osx-key-mode-map (kbd "A-q") nil)
-    (osx-key-mode-map 1)
+    (setq ns-command-modifier 'meta)
 )
 
 ;;; Utilities
