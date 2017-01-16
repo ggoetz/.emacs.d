@@ -6,6 +6,10 @@
 
 ; Enable elpy mode
 (package-initialize)
+
+;; Make sure to load $PATH from .bashrc for anaconda python
+(exec-path-from-shell-copy-env "PATH")
+
 (elpy-enable)
 
 ; Use iPython as default interpreter
