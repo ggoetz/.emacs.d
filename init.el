@@ -25,6 +25,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'zenburn t)
 
+; Turn on line numbers for programming mode
+(add-hook 'prog-mode-hook 'linum-mode)
+
 ;;; General settings
 ;; -------------------------------------------------------------------------- ;;
 
@@ -40,10 +43,16 @@
 
 ;; A couple more repositories
 (require 'package)
+;; TODO: change to https
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
 			 ("elpy" . "http://jorgenschaefer.github.io/packages/")))
+
+;; Turn on TLS trust checking
+;; TODO: see how to do here:
+;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html
+
 (package-initialize)
 
 ;; Exec path from shell
