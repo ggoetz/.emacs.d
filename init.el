@@ -19,6 +19,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (flycheck-ycmd company company-ycmd ycmd zenburn-theme nose magit intero iedit idomenu fuzzy f exec-path-from-shell elpy auto-complete ace-window)))
  '(virtualenv-root "~/Research/Vision/Stanford/vision9/env/"))
 
 ; Theme
@@ -27,6 +30,9 @@
 
 ; Turn on line numbers for programming mode
 (add-hook 'prog-mode-hook 'linum-mode)
+
+; Window navigation with ace-window
+(global-set-key (kbd "M-p") 'ace-window)
 
 ;;; General settings
 ;; -------------------------------------------------------------------------- ;;
@@ -45,8 +51,8 @@
 (require 'package)
 ;; TODO: change to https
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("elpy" . "http://jorgenschaefer.github.io/packages/")))
 
 ;; Turn on TLS trust checking
@@ -91,8 +97,11 @@
 ;; Flycheck
 (require 'flycheck-settings)
 
-;; Auto-complete
-(require 'autocomplete-settings)
+;; Company mode for autocompletion
+(require 'company-settings)
+
+;; ycmd as the primary code completion backend
+(require 'ycmd-settings)
 
 ;;; Modes
 ;; -------------------------------------------------------------------------- ;;
@@ -106,6 +115,9 @@
 
 ;; Python
 (require 'python-settings)
+
+;; C++
+;; (require 'cpp-settings)
 
 ;; Org-mode
 (require 'org-settings)

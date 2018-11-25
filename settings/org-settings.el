@@ -33,5 +33,10 @@
 (setenv "PATH" (concat (getenv "PATH") ":/usr/texbin"))
 (setq exec-path (append exec-path '("/usr/texbin")))
 
+;; Set up org mode to use python
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+
 (provide 'org-settings)
 ;;; org-settings ends here

@@ -13,7 +13,8 @@
 (elpy-enable)
 
 ; Use iPython as default interpreter
-(elpy-use-ipython)
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 ; Enable column indicator
 (add-hook 'python-mode-hook 'fci-mode)
