@@ -21,8 +21,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-ycmd company company-ycmd ycmd zenburn-theme nose magit intero iedit idomenu fuzzy f exec-path-from-shell elpy auto-complete ace-window)))
- '(virtualenv-root "~/Research/Vision/Stanford/vision9/env/"))
+    (flycheck-ycmd company company-ycmd ycmd zenburn-theme nose magit intero iedit idomenu fuzzy f exec-path-from-shell elpy auto-complete ace-window))))
 
 ; Theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
